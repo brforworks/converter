@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>公斤 ⇄ 磅 轉換器</title>
+</head>
+<body>
+    <h2>體重單位轉換</h2>
+    <label>公斤 (kg)</label>
+    <input type="number" id="kg" oninput="kgToLb()" placeholder="輸入公斤"><br><br>
+    <label>磅 (lb)</label>
+    <input type="number" id="lb" oninput="lbToKg()" placeholder="輸入磅">
+
+    <script>
+        function kgToLb() {
+            let kg = document.getElementById('kg').value;
+            if (kg !== '') {
+                document.getElementById('lb').value = (kg * 2.20462).toFixed(2);
+            } else {
+                document.getElementById('lb').value = '';
+            }
+        }
+        function lbToKg() {
+            let lb = document.getElementById('lb').value;
+            if (lb !== '') {
+                document.getElementById('kg').value = (lb / 2.20462).toFixed(2);
+            } else {
+                document.getElementById('kg').value = '';
+            }
+        }
+    </script>
+    <p><i>pollinations.ai 開發積分範例</i></p>
+</body>
+</html>
